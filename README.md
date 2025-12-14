@@ -47,21 +47,34 @@ The system analyzes **text and audio inputs** to detect emotions, mental states,
 ai-mental-health-assistant-project/
 │
 ├── app.py # Flask application entry point
+
 ├── therapist_chat.py # Therapist-style response logic
+
 ├── requirements.txt
+
 │
 ├── Suicide_Detection/ # Suicide risk prediction models
+
 ├── all_voices/ # Combined voice emotion models
+
 ├── ravdess_model/
+
 ├── tess_model/
+
 ├── savee_model/
+
 ├── bert_emotion_oversampled_model/
+
 ├── model/ # BERT model weights
+
 │
 ├── static/ # CSS & JS files
+
 ├── templates/ # HTML templates
+
 │
 ├── .gitignore
+
 ├── .gitattributes # Git LFS tracking---
 
 ## ⚙️ Setup Instructions (IMPORTANT)

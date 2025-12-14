@@ -81,9 +81,10 @@ ai-mental-health-assistant-project/
 
 ### 1️⃣ Clone the repository (DO NOT download ZIP)
 
-```bash
+``bash{
 git clone https://github.com/<your-username>/ai-mental-health-assistant-project.git
 cd ai-mental-health-assistant-project
+}
 ❗ ZIP downloads do not fetch Git LFS model files and will break the project.
 
 2️⃣ Create and activate virtual environment

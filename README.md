@@ -81,33 +81,33 @@ ai-mental-health-assistant-project/
 
 ### 1️⃣ Clone the repository (DO NOT download ZIP)
 
-``bash{
-git clone https://github.com/<your-username>/ai-mental-health-assistant-project.git
-cd ai-mental-health-assistant-project
+bash{
+```git clone https://github.com/<your-username>/ai-mental-health-assistant-project.git```
+```cd ai-mental-health-assistant-project```
 }
 ❗ ZIP downloads do not fetch Git LFS model files and will break the project.
 
-2️⃣ Create and activate virtual environment
+###2️⃣ Create and activate virtual environment
 
 Windows (PowerShell)
 
-python -m venv venv
-venv\Scripts\Activate
+```python -m venv venv```
+```venv\Scripts\Activate```
 
 
 Linux / macOS
 
-python3 -m venv venv
-source venv/bin/activate
+```python3 -m venv venv```
+```source venv/bin/activate```
 
-3️⃣ Install dependencies
-pip install -r requirements.txt
+###3️⃣ Install dependencies
+```pip install -r requirements.txt```
 
 
 ⚠️ This project uses large ML libraries (TensorFlow, PyTorch).
 Make sure you have sufficient disk space (≈ 8–10 GB).
 
-4️⃣ Set environment variables
+###4️⃣ Set environment variables
 
 Create a .env file in the root directory:
 
@@ -116,19 +116,19 @@ HUGGINGFACEHUB_API_TOKEN=your_huggingface_token_here
 
 The .env file is intentionally not committed for security reasons.
 
-5️⃣ Run the application
-python app.py
+###5️⃣ Run the application
+```python app.py```
 
 
 Open your browser at:
 
-http://127.0.0.1:5000
+```http://127.0.0.1:5000```
 
 ⚠️ Known Warnings (Expected)
 
 You may see warnings like:
 
-InconsistentVersionWarning: Trying to unpickle estimator from version 1.4.2
+```InconsistentVersionWarning: Trying to unpickle estimator from version 1.4.2```
 
 
 ✔️ This is expected because models were trained with an earlier scikit-learn version.

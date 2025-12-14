@@ -3,7 +3,8 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
 from langchain_core.messages import HumanMessage, AIMessage
 import os, ast, random
-
+from dotenv import load_dotenv
+load_dotenv()
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")  # Add your HF token
 CHAT_FILE = "chat_history.txt"
 

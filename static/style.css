@@ -1,0 +1,626 @@
+/* ===============================
+   GLOBAL STYLES
+=================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f5f5, #e6e6e6, #f0f0f0);
+    background-attachment: fixed;
+    color: #222;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* -------------------------------
+   LAYOUT: LEFT CHAT + RIGHT TOOLS
+--------------------------------*/
+
+.main-layout {
+    display: flex;
+    gap: 40px;
+    padding-top: 20px;
+}
+
+.left-panel {
+    width: 40%;
+}
+
+.right-panel {
+    width: 60%;
+}
+
+/* -------------------------------
+   HEADINGS
+--------------------------------*/
+
+h1 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* -------------------------------
+   TABS (Audio/Text/Suicide)
+--------------------------------*/
+
+.tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.tablink {
+    padding: 10px 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+
+    background: #C9FFD9;
+    color: #0B5D28;
+
+    border: 1px solid #A1EFB7; /* thin border */
+    transition: 0.25s ease;
+}
+
+.tablink:hover {
+    background: #B2F3C8;
+}
+
+.tablink.active {
+    background: #8FE6A3;
+    color: #06491C;
+    border: 1px solid #7CD99A;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.1);
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------
+   PHONE-LIKE CHAT UI
+--------------------------------*/
+
+.chat-phone-frame {
+    background: #fff;
+    border-radius: 25px;
+    padding: 15px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 12px 28px rgba(0,0,0,0.18);
+    border: 8px solid #333;
+}
+
+.chat-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+
+    display: flex;               /* REQUIRED */
+    flex-direction: column;      /* REQUIRED */
+
+    background: #efeae2;
+    background-size: 350px;
+    background-repeat: repeat;
+
+    border-radius: 18px;
+}
+
+
+
+
+/* ----- Chat bubbles ----- */
+
+.chat-message {
+    max-width: 75%;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.5;
+    animation: fadeIn 0.2s ease;
+}
+
+.human {
+    background: #d0f8c6;  /* WhatsApp green-ish */
+    align-self: flex-end;
+    border-radius: 14px 0 14px 14px;
+}
+
+
+
+.ai {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    align-self: flex-start;
+    border-radius: 0 14px 14px 14px;
+}
+
+
+/* ----- Chat Input Row ----- */
+
+.chat-input-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#chat_input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+#chat_input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
+}
+
+/* -------------------------------
+   INPUTS & TEXTAREAS
+--------------------------------*/
+
+input[type="text"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #007bff;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
+    outline: none;
+}
+
+/* -------------------------------
+   BUTTONS
+--------------------------------*/
+
+button,
+.blue-btn,
+.predict-btn,
+.icon-btn {
+    background: #1c9245;     /* dark green */
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0px 4px 14px rgba(0, 93, 40, 0.25);
+}
+
+button:hover,
+.blue-btn:hover,
+.predict-btn:hover,
+.icon-btn:hover {
+    background: #1c9245;     /* darker green hover */
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* -------------------------------
+   RESULT CARDS
+--------------------------------*/
+
+.result-box {
+    margin-top: 20px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.08);
+}
+
+.result-label {
+    font-weight: 700;
+    width: 130px;
+    display: inline-block;
+}
+
+.result-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.emotion-badge {
+    padding: 6px 12px;
+    margin: 4px;
+    display: inline-block;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.badge-single { background: #d6e9ff; }
+.badge-multi  { background: #d1ffe4; }
+
+/* -------------------------------
+   RESPONSIVE
+--------------------------------*/
+
+@media (max-width: 992px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    .left-panel,
+    .right-panel {
+        width: 100%;
+    }
+}
+
+
+/* ===== METALLIC HEADING STYLE ===== */
+
+/* Metallic Heading Style */
+/* Metallic Heading Box Style (same as tabs) */
+.heading-box {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 12px;
+
+    background: #B5F6C7;
+    color: #06491C;
+
+    font-weight: 700;
+    font-size: 26px;
+
+    border: 1px solid #9EEEB4;    /* thinner border */
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+    margin-bottom: 15px;
+}
+
+
+/* ===== FULL SCREEN NO-SCROLL FIX ===== */
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Reduce chat height */
+.chat-phone-frame {
+    height: 60vh;
+}
+
+/* Make right-side content self-scrolling if needed */
+.tabcontent {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+/* Improve the input field under Speech Emotion */
+.audio-input-box {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid #cfcfcf;
+
+    background: #ffffff;
+    font-size: 15px;
+
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.08);
+    transition: 0.2s ease-in-out;
+    margin-bottom: 18px; /* spacing before button */
+}
+
+.audio-input-box:focus {
+    border-color: #007bff;
+    box-shadow: 
+        inset 0 1px 4px rgba(0,0,0,0.15),
+        0 0 0 4px rgba(0,123,255,0.15);
+    outline: none;
+}
+
+/* Add space above predict button */
+.predict-btn {
+    margin-top: 10px;
+}
+/* Unified Result Card (same as Text Emotion) */
+.result-card {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #c8f5d6; /* thin border */
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.08);
+}
+
+
+
+/* Section title */
+.result-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Badges */
+.emotion-badge {
+    padding: 8px 14px;
+    margin: 6px 0;
+    background: #DFFFE8;
+    color: #0B5D28;
+    border-radius: 14px;
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Success */
+.badge-green {
+    background: #DFFFE8;
+    color: #0B5D28;
+}
+
+/* Danger (suicide risk) */
+.badge-red {
+    background: #FFD6D6;
+    color: #8B0000;
+    border-radius: 14px;
+}
+
+/* Neutral */
+.badge-neutral {
+    background: #EEE;
+    color: #333;
+}
+
+.result-section {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-label {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.audio-pred-label {
+    font-weight: 700;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    color: #06491C;
+}
+
+.audio-pred-badge {
+    background: #DFFFE8;
+    color: #06491C;
+    padding: 10px 14px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.icon-btn {
+    background: #1c9245 !important;
+    color: white !important;
+}
+/* Stylish File Input Wrapper */
+.file-input-wrapper {
+    width: 100%;
+    background: #ffffff;
+    border: 2px solid #A1EFB7;
+    border-radius: 14px;
+    padding: 12px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.file-input-wrapper:hover {
+    border-color: #6CD98D;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.25);
+}
+
+.file-input-wrapper label {
+    font-weight: 600;
+    color: #0B5D28;
+    cursor: pointer;
+}
+
+#audio_file {
+    display: none;  /* hide ugly default input */
+}
+
+.file-selected-name {
+    color: #333;
+    font-size: 15px;
+    opacity: 0.9;
+}
+/* Modern Glassy Audio Player */
+audio {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+
+    box-shadow: 
+        0px 4px 12px rgba(0,0,0,0.15),
+        inset 0px 1px 3px rgba(255,255,255,0.3);
+}
+
+/* Hide ugly default outline */
+audio:focus {
+    outline: none !important;
+}
+
+/* Improve controls for Webkit browsers (Chrome/Edge/Safari) */
+audio::-webkit-media-controls-panel {
+    background: rgba(0, 150, 80, 0.07);   /* soft green tint */
+    border-radius: 16px;
+}
+
+/* Play/Pause button */
+audio::-webkit-media-controls-play-button {
+    filter: brightness(1) saturate(1.5);
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+
+audio::-webkit-media-controls-play-button:hover {
+    transform: scale(1.35);
+}
+
+/* Timeline slider */
+audio::-webkit-media-controls-timeline {
+    filter: saturate(1.4);
+}
+
+/* Volume slider */
+audio::-webkit-media-controls-volume-slider {
+    filter: saturate(1.4);
+}
+.chat-message.human {
+    align-self: flex-end !important;
+    background: #d0f8c6 !important;  /* WhatsApp green */
+    border-radius: 14px 0 14px 14px !important;
+}
+.chat-message.ai {
+    align-self: flex-start !important;
+    background: #ffffff !important;
+    border-radius: 0 14px 14px 14px !important;
+}
+/* =========================
+   MOBILE PATCH (append)
+   ========================= */
+
+/* 1) Override full-screen no-scroll for mobile */
+@media (max-width: 992px) {
+  html, body {
+    height: auto;
+    overflow: auto;
+    padding: 12px;
+  }
+  /* reduce heavy border on chat frame */
+  .chat-phone-frame {
+    border: 4px solid #333;
+    height: 65vh;
+    padding: 12px;
+    border-radius: 16px;
+  }
+  /* smaller background tiling (if used) */
+  .chat-area {
+    background-size: 180px;
+  }
+}
+
+/* 2) Exact mobile tweaks for narrow devices */
+@media (max-width: 767px) {
+
+  /* Layout stacks vertically */
+  .main-layout {
+    display: block;
+    gap: 12px;
+    padding-top: 8px;
+  }
+  .left-panel, .right-panel { width: 100%; }
+
+  /* Headings smaller */
+  h1 { font-size: 20px; margin-bottom: 10px; }
+  .heading-box { font-size: 18px; padding: 8px 14px; }
+
+  /* Chat area height & scrolling */
+  .chat-phone-frame { height: calc(70vh); padding-bottom: 80px; }
+  .chat-area { padding: 12px; background-size: 140px; }
+
+  /* Make the input row sticky at bottom of chat frame */
+  .chat-input-row {
+    position: sticky;
+    bottom: 8px;
+    background: transparent;
+    gap: 8px;
+    z-index: 5;
+  }
+
+  /* Touchable buttons and inputs */
+  .icon-btn { min-width: 44px; padding: 10px 12px; font-size: 18px; }
+  button, .predict-btn, .blue-btn { padding: 12px 16px; font-size: 16px; }
+
+  /* Tabs become horizontally scrollable */
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 6px;
+  }
+  .tablink { flex: 0 0 auto; padding: 8px 12px; font-size: 14px; }
+
+  /* Make tabcontent comfortable to scroll */
+  .tabcontent { padding: 14px; border-radius: 12px; max-height: unset; }
+
+  /* Make audio player fully responsive */
+  audio { width: 100%; }
+
+}
+
+/* 3) Performance: remove fixed background on small screens */
+@media (max-width: 1024px) {
+  body { background-attachment: scroll; } /* override fixed for better mobile perf */
+}
+
+/* 4) Optional: ensure images don't overflow in chat */
+.chat-area img { max-width: 100%; height: auto; display: block; }
+
+/* 5) Small tablet adjustments */
+@media (min-width: 768px) and (max-width: 992px) {
+  .left-panel { width: 45%; }
+  .right-panel { width: 55%; }
+  .chat-phone-frame { height: 66vh; }
+}

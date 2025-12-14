@@ -1,0 +1,44 @@
+# ---- Python cache ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ---- Virtual environments ----
+venv/
+env/
+testenv/
+.venv/
+
+# ---- IDE / Editor garbage ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- OS-generated trash ----
+Thumbs.db
+.DS_Store
+
+# ---- Logs / temporary files ----
+*.log
+chat_history.txt
+
+# ---- Jupyter checkpoints ----
+.ipynb_checkpoints/
+
+# ---- Environment files ----
+*.env
+
+# ---- Model files handled by Git LFS ----
+*.pkl
+*.joblib
+*.safetensors
+
+# ---- Build / Packaging ----
+build/
+dist/
+*.egg-info/
+
+# ---- Flask specific ----
+instance/

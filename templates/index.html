@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Mental Health & Emotion Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<body>
+
+<h1><span class="heading-box">🧠 AI Mental Health & Emotion Dashboard</span></h1>
+
+
+<div class="main-layout">
+
+    <!-- LEFT SIDE — CHAT PANEL -->
+    <div class="left-panel">
+        <h2><span class="heading-box">🧠 Therapist Chat</span></h2>
+
+
+        <div class="chat-phone-frame">
+            <div id="chat_box" class="chat-area"></div>
+
+            <div class="chat-input-row">
+                <input type="text" id="chat_input" placeholder="Type your message...">
+                <button class="icon-btn" onclick="sendChat()">➤</button>
+                <button class="icon-btn" onclick="clearChat()">✖</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE — TABS & OTHER FEATURES -->
+    <div class="right-panel">
+
+        <div class="tabs">
+            <button class="tablink" onclick="openTab(event, 'audio')">🎙️ Speech Emotion</button>
+            <button class="tablink" onclick="openTab(event, 'text')">🎭 Text Emotion</button>
+            <button class="tablink" onclick="openTab(event, 'suicide')">☠️ Suicide Detection</button>
+        </div>
+
+        <!-- AUDIO TAB -->
+        <div id="audio" class="tabcontent">
+    <h2><span class="heading-box">🎙️ Speech Emotion Recognition</span></h2>
+
+    <!-- Custom File Upload -->
+    <div class="file-input-wrapper" onclick="document.getElementById('audio_file').click()">
+        <label>📂 Choose Audio File</label>
+        <span class="file-selected-name" id="file_name">No file chosen</span>
+    </div>
+
+    <input type="file" id="audio_file" accept=".wav" style="display:none;" onchange="previewAudio(); updateFileName();">
+
+    <audio id="audio_player" controls style="display:none;">
+        <source id="audio_source" type="audio/wav">
+    </audio>
+
+    <button class="blue-btn predict-btn" onclick="predictAudio()">🎯 Predict Emotion</button>
+
+    <div id="audio_result"></div>
+</div>
+
+        <!-- TEXT TAB -->
+        <div id="text" class="tabcontent">
+            <h2><span class="heading-box">🎭 Text Emotion Analysis</span></h2>
+
+            <textarea id="text_input" rows="4"></textarea>
+            <button onclick="predictText()">Analyze</button>
+            <div id="text_result"></div>
+        </div>
+
+        <!-- SUICIDE TAB -->
+        <div id="suicide" class="tabcontent">
+            <h2><span class="heading-box">☠️ Suicide Detection</span></h2>
+
+            <textarea id="suicide_input" rows="4"></textarea>
+            <button onclick="predictSuicide()">Predict</button>
+            <div id="suicide_result"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</body>
+</html>

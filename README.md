@@ -87,7 +87,7 @@ bash{
 }
 ❗ ZIP downloads do not fetch Git LFS model files and will break the project.
 
-###2️⃣ Create and activate virtual environment
+### 2️⃣ Create and activate virtual environment
 
 Windows (PowerShell)
 
@@ -100,14 +100,14 @@ Linux / macOS
 ```python3 -m venv venv```
 ```source venv/bin/activate```
 
-###3️⃣ Install dependencies
+### 3️⃣ Install dependencies
 ```pip install -r requirements.txt```
 
 
 ⚠️ This project uses large ML libraries (TensorFlow, PyTorch).
 Make sure you have sufficient disk space (≈ 8–10 GB).
 
-###4️⃣ Set environment variables
+### 4️⃣ Set environment variables
 
 Create a .env file in the root directory:
 
@@ -116,7 +116,7 @@ HUGGINGFACEHUB_API_TOKEN=your_huggingface_token_here
 
 The .env file is intentionally not committed for security reasons.
 
-###5️⃣ Run the application
+### 5️⃣ Run the application
 ```python app.py```
 
 

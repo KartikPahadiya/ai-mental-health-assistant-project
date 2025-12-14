@@ -22,7 +22,7 @@ The system analyzes **text and audio inputs** to detect emotions, mental states,
 ## 🧩 Tech Stack
 
 **Backend**
-- Python 3.10
+- Python 
 - Flask
 
 **Machine Learning / NLP**

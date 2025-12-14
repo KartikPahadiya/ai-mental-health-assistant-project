@@ -35,14 +35,18 @@ cd ai-mental-health-assistant-project
 
 Windows (PowerShell)
 
-```python -m venv venv```
-```venv\Scripts\Activate```
+```bash
+python -m venv venv
+venv\Scripts\Activate
+```
 
 
 Linux / macOS
 
-```python3 -m venv venv```
-```source venv/bin/activate```
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
 ### 3️ Install dependencies
 ```pip install -r requirements.txt```

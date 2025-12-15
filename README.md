@@ -54,6 +54,10 @@ pip install -r requirements.txt
 - This project uses large ML libraries (TensorFlow, PyTorch).
 - Make sure you have sufficient disk space (≈ 8–10 GB).
 
+[x] run this command in cmd
+```bash
+python -m spacy download en_core_web_sm
+```
 ### 4️. Set environment variables
 
 Create a `.env` file in the root directory:

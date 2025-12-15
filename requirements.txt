@@ -17,3 +17,4 @@ transformers==4.57.3
 tokenizers==0.22.1
 xgboost==3.1.2
 scikit-learn==1.6.1
+mangum

@@ -264,3 +264,8 @@ print("🔥 ALL MODELS SUCCESSFULLY WARMED ✔️")
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+from mangum import Mangum
+
+handler = Mangum(app)

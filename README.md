@@ -6,8 +6,9 @@ The system analyzes **text and audio inputs** to detect emotions, mental states,
 >  This project is intended for **educational and research purposes only** and is **not a replacement for professional mental health care**.
 
 ---
----
-#Live Demo: https://kartikpahadiya-mental-health-app.hf.space
+
+#  Live Demo: https://kartikpahadiya-mental-health-app.hf.space
+
 ---
 ##  Features
 

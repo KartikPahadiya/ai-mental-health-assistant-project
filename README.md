@@ -7,7 +7,12 @@ The system analyzes **text and audio inputs** to detect emotions, mental states,
 
 ---
 
-#  Live Demo: https://kartikpahadiya-mental-health-app.hf.space
+## 🚀 Live Demo (Deployed)
+
+👉 **Try the app here:**  
+🔗 **https://kartikpahadiya-mental-health-app.hf.space**
+
+*(Deployed on Hugging Face Spaces — runs independently of local machine)*
 
 ---
 ##  Features
